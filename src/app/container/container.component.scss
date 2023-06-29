@@ -1,0 +1,145 @@
+.container {
+    display : grid;
+    grid-template-columns: 60% 40%;
+    height : 100%;  
+    
+    .open-button {
+        position : absolute;
+        top : 10px;
+        right : 10px;
+        font-size: 2rem;
+    }
+    .main-info {
+        height : 98dvh;
+        display : flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        flex-wrap : wrap;
+        padding : 30px;
+        .temperature {
+            font-weight: 800;
+            font-size: 8rem;
+        }
+        .place, .temp-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap : 20px;
+            flex-wrap : wrap;
+
+            .city {
+                font-size: 4rem;
+            }
+            .img {
+                width : 50px;
+                height : 50px;
+            }
+        }
+    }
+
+    .progress-bar {
+        display : flex;
+        align-items: flex-end;
+        justify-content: center;
+        height : 98vh;
+        padding : 30px;
+        gap : 50px;
+    }
+
+    .extra-info {
+        overflow : scroll;
+        height : 98dvh;
+        background-blend-mode: darken;
+        backdrop-filter: brightness(40%);
+        border-radius : 8px;
+        padding : 30px;
+        display : flex;
+        flex-direction: column;
+        gap : 30px;
+
+
+        .major-cities {
+            display : flex;
+            flex-direction: column;
+            gap : 10px;
+            width : 100%;
+            align-self: center;
+            margin-top : 50px;
+        }
+
+        .info {
+            align-self: center;
+            display : flex;
+            flex-direction: column;
+            gap : 10px;
+            padding : 10px;
+            border-radius: 8px;
+            width : 80%;
+            .category {
+                display: flex;
+                justify-content : space-between;
+            }
+            i {
+                font-size: 1.3rem;
+                padding-right : 10px;
+            }
+        }
+
+        .buttons {
+            display : flex;
+            gap : 20px;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    transition: all 500ms ease-in-out;
+
+    .sidepanel { 
+        width : 0;
+        max-width : 98dvh;
+        margin : 20px;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        right: 5px;
+        top: 50px;
+        overflow-x: hidden;
+        transition: 400ms;
+        background-color: var(--surface-ground);
+        border-radius : 8px;
+        .close-button {
+            position: fixed;
+            top : 10px;
+            right : 10px;
+            font-size: 2rem;
+        }
+
+        .extra-info {
+            height : 85dvh;
+        }
+    }
+}
+
+
+
+
+
+@media (max-width : 1000px) {
+    .container {
+        display : grid;
+        grid-template-columns: 100%;
+        .main-info {
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-start;
+    
+        }
+    }
+}
+
+:host ::ng-deep .p-listbox {
+    background-color: transparent;
+    border : none;
+
+}

@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/primeng/resources/primeng.css";
+@import "../node_modules/primeng/resources/themes/md-dark-indigo/theme.css";
+@import "../node_modules/primeicons/primeicons.css";
+@import "../node_modules/primeflex/primeflex.css";
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+
+body {
+    font-family: var(--font-family);
+    font-weight: normal;
+    background-image: url("./assets/backgrounds/mist.jpg");
+
+    background-attachment: fixed;
+    background-size: cover;
+    color: var(--text-color);
+    transition : all 500ms ease-in-out;
+
+}
+
+::-webkit-scrollbar {
+    // margin : 10px;
+    width: 0px;
+}
+
+::-webkit-scrollbar-track {
+    opacity : 0;
+}
+
+::-webkit-scrollbar-thumb {
+    background: inherit;
+    border-radius : 8px; 
+    opacity : 0;
+}

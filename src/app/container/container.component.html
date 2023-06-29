@@ -1,0 +1,103 @@
+<div class="container">
+    <button pButton pRipple icon="bi bi-list" class="p-button-text p-button-info open-button" *ngIf="!sidebarOpen && !wideScreen" (click)="openSideBar()"></button>
+    <div class="main-info" *ngIf="!gettingData">
+        <div class="temperature">
+            {{currentCity.temp | temperature : targetUnit}}
+        </div>
+        <div class="temp-info">
+            <img class="img" [src]="'../../assets/icons/' + currentCity.icon + '.png'" />
+            <span> {{currentCity.weather}} </span>
+        </div>
+        <div class="place">
+            <span class="city"> {{currentCity.cityName}} </span>
+            <span> {{dateObject | date : 'dd MMMM yyyy HH:mm' : currentCity.timeZone}} </span>
+        </div>
+    </div>
+    <div class="main-info" *ngIf="gettingData">
+        <p-skeleton width="800px" height="150px"></p-skeleton>
+    </div>
+    <div class="extra-info" *ngIf="wideScreen">
+        <form [formGroup]="cityInput" (ngSubmit)="onFormSubmit()">
+            <div class="p-inputgroup">
+                <input type="text" pInputText placeholder="Enter city" formControlName="city" />
+                <button type="submit" pButton pRipple icon="pi pi-search" class="p-button-warning"></button>
+            </div>
+
+            <div class="major-cities">
+                <p-listbox [options]="majorCities" formControlName="city" (onClick)="onFormSubmit()"></p-listbox>
+            </div>
+        </form> 
+        <hr>
+
+        <div class="info" *ngIf="!gettingData">
+            <div class="category">
+                <span> <i class="bi bi-moisture"></i> Humidity : </span>
+                <span> {{currentCity.humidity}}% </span>
+            </div>
+            <div class="category">
+                
+                <span> <i class="bi bi-wind"></i> Wind Speed : </span>
+                <span> {{currentCity.windSpeed}} Knots </span>
+            </div>
+            <div class="category">
+                <span> <i class="bi bi-sunrise"></i> Sun Rise : </span>
+                <span> {{currentCity.sunRise | date:'HH:mm' : currentCity.timeZone}} </span>
+            </div>
+            <div class="category">
+                <span> <i class="bi bi-sunset"></i> Sun Set : </span>
+                <span> {{currentCity.sunSet | date:'HH:mm' : currentCity.timeZone}} </span>
+            </div>
+        </div>
+        <div class="info" *ngIf="gettingData">
+            <p-skeleton *ngFor="let i of [1, 2, 3, 4]" width="100%" height="25px"></p-skeleton>
+        </div>
+        <div class="buttons">
+            <p-button [label]="targetUnit === 'C' ? 'Farenheit' : 'Celsius'" (onClick)="toggleUnit()" styleClass="p-button-text p-button-secondary"></p-button>
+            <p-button label="refresh" (onClick)="refreshData()" styleClass="p-button-text p-button-help"></p-button>
+        </div>
+    </div>
+    <div class="sidepanel" #sidePanel *ngIf="!wideScreen">
+        <button pButton pRipple icon="bi bi-x" (click)="closeSideBar()" class="p-button-text p-button-danger close-button" *ngIf="sidebarOpen && !wideScreen"></button>
+        <div class="extra-info">
+            <form [formGroup]="cityInput" (ngSubmit)="onFormSubmit()">
+                <div class="p-inputgroup">
+                    <input type="text" pInputText placeholder="Enter city" formControlName="city"/>
+                    <button type="submit" pButton pRipple icon="pi pi-search" class="p-button-warning"></button>
+                </div>
+
+                <div class="major-cities">
+                    <p-listbox [options]="majorCities" formControlName="city" (onClick)="onFormSubmit()"></p-listbox>
+                </div>
+            </form>
+            <hr>
+    
+            <div class="info" *ngIf="!gettingData">
+                <div class="category">
+                    <span> <i class="bi bi-moisture"></i> Humidity : </span>
+                    <span> {{currentCity.humidity}}% </span>
+                </div>
+                <div class="category">
+                    
+                    <span> <i class="bi bi-wind"></i> Wind Speed : </span>
+                    <span> {{currentCity.windSpeed}} Knots </span>
+                </div>
+                <div class="category">
+                    <span> <i class="bi bi-sunrise"></i> Sun Rise : </span>
+                    <span> {{currentCity.sunRise | date:'HH:mm'}} </span>
+                </div>
+                <div class="category">
+                    <span> <i class="bi bi-sunset"></i> Sun Set : </span>
+                    <span> {{currentCity.sunSet | date:'HH:mm'}} </span>
+                </div>
+            </div>
+            <div class="info" *ngIf="gettingData">
+                <p-skeleton *ngFor="let i of [1, 2, 3, 4]" width="100%" height="25px"></p-skeleton>
+            </div>
+            <div class="buttons">
+                <p-button [label]="targetUnit === 'C' ? 'Farenheit' : 'Celsius'" (onClick)="toggleUnit()" styleClass="p-button-text p-button-secondary"></p-button>
+                <p-button label="refresh" (onClick)="refreshData()" styleClass="p-button-text p-button-help"></p-button>
+            </div>
+        </div>
+    </div>
+
+</div>
