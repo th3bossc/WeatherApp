@@ -8,7 +8,7 @@ export class WeatherDataService {
   constructor(private http : HttpClient) { }
   private apiId : string = "650ba8bd36d3a45df6fb306bcfef5cf7";
   // private secondaryapiId : string = "3f997472293794836c4607ee6cdc14f6";
-  private geoDataUrl : string = "http://api.openweathermap.org/geo/1.0/direct?";
+  private geoDataUrl : string = "https://api.openweathermap.org/geo/1.0/direct?";
   private weatherDataUrl : string = "https://api.openweathermap.org/data/2.5/weather?";
 
 
