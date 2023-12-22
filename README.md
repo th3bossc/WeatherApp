@@ -1,27 +1,43 @@
-# WeatherApp
+# Weather App
+A weather app that gives you any location's current weather data and previews them in a clean user interface.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.2.
+## Table of contents
 
-## Development server
+- [Overview](#overview)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Overview
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### The challenge
 
-## Build
+Users should be able to:
+  - Get Weather data of their current location
+  - search for any location through a search bar
+  - Switch between Farenheit and Celsius units
+  - Refresh data
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## My process
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Built with
 
-## Running end-to-end tests
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- [AngularJS](https://angular.io/) - JS library
+- [Sass](https://sass-lang.com) - CSS Preprocessor
+- [PrimeNg Components](https://primeng.org/) - For styles
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+### Useful resources
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- [Angular Documentation](https://angular.io/docs) - Angular documentation helped me a lot when working with projects, and needed to know how a specific feature was used, and the best way to use it.
+
+## Author
+
+- Website - [Diljith P D](https://th3bossc.github.io/Portfolio)
